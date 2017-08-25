@@ -1,0 +1,14 @@
+package com.apex.spring;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SpringController {
+	
+	@RequestMapping("/upload")
+	public String uploadFile(){
+		return "Success";
+	}
+
+}

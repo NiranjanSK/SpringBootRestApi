@@ -1,0 +1,27 @@
+package com.apex.spring;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SpringController {
+	
+	@RequestMapping("/upload")
+	public String uploadFile(@RequestBody String payload){
+		System.out.println("Payload: "+payload);
+		try {
+			JSONObject obj = new JSONObject(payload);
+			
+			String vendorId = (String) obj.get("vendorId");
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "Success";
+	}
+
+}
